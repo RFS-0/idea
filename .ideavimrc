@@ -1,0 +1,104 @@
+"" Search action list with :actionlist <search-term>
+
+let mapleader=" "
+
+""" Plugins  --------------------------------
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+
+""" Common settings -------------------------
+set clipboard+=unnamed
+set clipboard+=ideaput
+set showmode
+set so=5
+set incsearch
+set hlsearch
+set nu
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+
+""" My Mappings -----------------------------
+"" Open ~/.ideavimrc
+map \e :e ~/.ideavimrc<CR>
+"" Reload
+map \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+"" Insert mode
+
+"" Normal mode
+nnoremap <Leader>1 :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>2 :action Terminal.OpenInTerminal<CR>
+
+nnoremap <Leader>sv :action SplitVertically<CR>
+nnoremap <Leader>sh :action SplitHorizontally<CR>
+
+nnoremap <Leader>sh :action PrevSplitter<CR>
+nnoremap <Leader>sk :action PrevSplitter<CR>
+nnoremap <Leader>sj :action NextSplitter<CR>
+nnoremap <Leader>sl :action NextSplitter<CR>
+
+nnoremap <S-l> :action NextTab<CR>
+nnoremap <S-h> :action PreviousTab<CR>
+
+nnoremap <Leader>nc :action JumpToNextChange<CR>
+nnoremap <Leader>lc :action JumpToLastChange<CR>
+
+nnoremap q :action CloseContent<CR>
+nnoremap <Leader>qa :action CloseAllEditors<CR>
+nnoremap <Leader>co :action CloseAllEditorsButActive<CR>
+
+nnoremap <M-j> :action MoveStatementDown<CR>
+nnoremap <M-k> :action MoveStatementUp<CR>
+
+nnoremap gr :action FindUsages<CR>
+nnoremap gs :action FileStructurePopup<CR>
+nnoremap gS :action GotoSymbol<CR>
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+nnoremap ft :action ActivateFindToolWindow<CR>
+nnoremap <Leader>fp :action OpenProjectWindows<CR>
+nnoremap <Leader>ll :action NextProjectWindow<CR>
+nnoremap <Leader>hh :action PreviousProjectWindow<CR>
+nnoremap <Leader>ff :action GotoFile<CR>
+nnoremap <Leader>fg :action FindInPath<CR>
+nnoremap <Leader>fb :action RecentFiles<CR>
+nnoremap <leader>fl :action RecentLocations<CR>
+nnoremap <leader>fh  :action LocalHistory.ShowHistory<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+
+nnoremap <leader>re :action Refactorings.QuickListPopupAction<CR>
+nnoremap gcc :action CommentByLineComment<CR>
+nnoremap <Leader>fo  :action ReformatCode<CR>
+nnoremap <leader>fi :action OptimizeImports<CR>
+nnoremap <leader>fr :action RenameElement<CR>
+
+"" Term mode
+
+"" Visual block mode
+
+"" Command mode
+
+
+"" Map \r to the Reformat Code action
+map <Leader>fo <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
