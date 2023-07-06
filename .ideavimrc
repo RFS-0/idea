@@ -5,6 +5,9 @@ let mapleader=" "
 """ Plugins  --------------------------------
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+
+set easymotion
 
 """ Common settings -------------------------
 set clipboard+=unnamed
@@ -14,6 +17,11 @@ set so=5
 set incsearch
 set hlsearch
 set nu
+
+set cursorline = true
+set number = true
+set relativenumber = true
+set wrap = false
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
@@ -42,6 +50,8 @@ nnoremap <Leader>sh :action PrevSplitter<CR>
 nnoremap <Leader>sk :action PrevSplitter<CR>
 nnoremap <Leader>sj :action NextSplitter<CR>
 nnoremap <Leader>sl :action NextSplitter<CR>
+nnoremap <Leader>mo :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <Leader>oo :action OpenEditorInOppositeTabGroup<CR>
 
 nnoremap <S-l> :action NextTab<CR>
 nnoremap <S-h> :action PreviousTab<CR>
@@ -69,8 +79,8 @@ nnoremap gf :action Forward<CR>
 
 nnoremap ft :action ActivateFindToolWindow<CR>
 nnoremap <Leader>fp :action OpenProjectWindows<CR>
-nnoremap <Leader>ll :action NextProjectWindow<CR>
-nnoremap <Leader>hh :action PreviousProjectWindow<CR>
+nnoremap <Leader>pp :action NextProjectWindow<CR>
+nnoremap <Leader>PP :action PreviousProjectWindow<CR>
 nnoremap <Leader>ff :action GotoFile<CR>
 nnoremap <Leader>fg :action FindInPath<CR>
 nnoremap <Leader>fb :action RecentFiles<CR>
@@ -84,6 +94,11 @@ nnoremap gcc :action CommentByLineComment<CR>
 nnoremap <Leader>fo  :action ReformatCode<CR>
 nnoremap <leader>fi :action OptimizeImports<CR>
 nnoremap <leader>fr :action RenameElement<CR>
+nnoremap <leader>rr :action ChooseRunConfiguration<CR>
+nnoremap <leader>dd :action ChooseDebugConfiguration<CR>
+nnoremap <leader>ss :action ActivateServicesToolWindow<CR>
+nnoremap <leader>hh :action HideActiveWindow<CR>
+nnoremap <leader>rw :action ActivateRunToolWindow<CR>
 
 "" Term mode
 
@@ -96,7 +111,7 @@ nnoremap <leader>fr :action RenameElement<CR>
 map <Leader>fo <Action>(ReformatCode)
 
 "" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
+map <leader>d <Action>(Debug)
 
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
