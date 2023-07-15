@@ -17,6 +17,7 @@ set so=5
 set incsearch
 set hlsearch
 set nu
+set ignorecase smartcase
 
 set cursorline = true
 set number = true
